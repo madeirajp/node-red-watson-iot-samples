@@ -4,7 +4,7 @@ This project contains some [Node-RED](https://nodered.org/) sample flows used in
 
 Functionality:
 
-* Getting started with the Watson IoT Quickstart ([dashboard](https://quickstart.internetofthings.ibmcloud.com/#/)) / ([sensor](https://quickstart.internetofthings.ibmcloud.com/iotsensor/))
+* Getting started with the Watson IoT Quickstart ([dashboard](https://quickstart.internetofthings.ibmcloud.com/#/) / [sensor](https://quickstart.internetofthings.ibmcloud.com/iotsensor/))
 * Using the [IoT Starter](https://console.bluemix.net/catalog/starters/internet-of-things-platform-starter)
 * Registering IoT devices
 * Building simple web user interfaces via the [Node-RED Dashboard](https://github.com/node-red/node-red-dashboard)
