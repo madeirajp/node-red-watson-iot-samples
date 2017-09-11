@@ -1,0 +1,1072 @@
+[
+    {
+        "id": "6b587497.bde64c",
+        "type": "tab",
+        "label": "IoT Starter",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "547f57e1.e0b3f8",
+        "type": "tab",
+        "label": "IoT Quickstart",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "1720a731.3f61a9",
+        "type": "tab",
+        "label": "UI",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "23a35187.98affe",
+        "type": "tab",
+        "label": "Watson",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "98f15973.119b98",
+        "type": "tab",
+        "label": "REST",
+        "disabled": false,
+        "info": ""
+    },    
+    {
+        "id": "6b5a58cb.e7c338",
+        "type": "ui_base",
+        "z": 0,
+        "theme": {
+            "name": "theme-dark",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#097479",
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#000000",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#0eb8c0",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "8755b07.ebdb95",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Dashboard",
+        "icon": "dashboard",
+        "order": 2
+    },
+    {
+        "id": "61d2d684.972438",
+        "type": "ui_tab",
+        "z": 0,
+        "name": "Home",
+        "icon": "dashboard"
+    },
+    {
+        "id": "a863e2a7.9533a",
+        "type": "ui_group",
+        "z": "",
+        "name": "Gauge",
+        "tab": "8755b07.ebdb95",
+        "order": 1,
+        "disp": true,
+        "width": "6"
+    },
+    {
+        "id": "b5b508b0.2a7358",
+        "type": "ui_group",
+        "z": 0,
+        "name": "Twitter",
+        "tab": "61d2d684.972438",
+        "disp": true,
+        "width": "6"
+    },
+    {
+        "id": "8af34626.4002f8",
+        "type": "ui_group",
+        "z": "",
+        "name": "Chart",
+        "tab": "8755b07.ebdb95",
+        "disp": true,
+        "width": "6"
+    },
+    {
+        "id": "92dae8a2.ac4dc8",
+        "type": "http in",
+        "z": "98f15973.119b98",
+        "name": "",
+        "url": "resource",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 100,
+        "y": 129,
+        "wires": [
+            [
+                "22db5610.ff2cda"
+            ]
+        ]
+    },
+    {
+        "id": "22db5610.ff2cda",
+        "type": "function",
+        "z": "98f15973.119b98",
+        "name": "create response",
+        "func": "msg.payload = { 'test': 'test' }\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 355,
+        "y": 128,
+        "wires": [
+            [
+                "8db3720c.6ce9d"
+            ]
+        ]
+    },
+    {
+        "id": "8db3720c.6ce9d",
+        "type": "http response",
+        "z": "98f15973.119b98",
+        "name": "send response",
+        "statusCode": "",
+        "headers": {},
+        "x": 618,
+        "y": 128,
+        "wires": []
+    },
+    {
+        "id": "15523c7.ca20bc4",
+        "type": "http request",
+        "z": "98f15973.119b98",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "url": "https://jsonplaceholder.typicode.com/posts",
+        "tls": "",
+        "x": 280,
+        "y": 296,
+        "wires": [
+            [
+                "b3862014.991f9"
+            ]
+        ]
+    },
+    {
+        "id": "dd301b2c.144228",
+        "type": "inject",
+        "z": "98f15973.119b98",
+        "name": "Trigger",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 102,
+        "y": 296,
+        "wires": [
+            [
+                "15523c7.ca20bc4"
+            ]
+        ]
+    },
+    {
+        "id": "b7f7e7bd.52f438",
+        "type": "debug",
+        "z": "98f15973.119b98",
+        "name": "print output",
+        "active": true,
+        "console": "false",
+        "complete": "payload",
+        "x": 715,
+        "y": 295,
+        "wires": []
+    },
+    {
+        "id": "b3862014.991f9",
+        "type": "function",
+        "z": "98f15973.119b98",
+        "name": "parse output",
+        "func": "msg.payload = msg.payload[0]\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 489,
+        "y": 295,
+        "wires": [
+            [
+                "b7f7e7bd.52f438"
+            ]
+        ]
+    },
+    {
+        "id": "2807dfcf.bc006",
+        "type": "twitter out",
+        "z": "1720a731.3f61a9",
+        "twitter": "",
+        "name": "Tweet",
+        "x": 604,
+        "y": 105,
+        "wires": []
+    },
+    {
+        "id": "bbd6350c.e04068",
+        "type": "debug",
+        "z": "1720a731.3f61a9",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "true",
+        "x": 595,
+        "y": 226,
+        "wires": []
+    },
+    {
+        "id": "12ec5502.e127bb",
+        "type": "function",
+        "z": "1720a731.3f61a9",
+        "name": "",
+        "func": "\nmsg.payload = msg.payload;\nglobal.set('niklas', msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 242,
+        "y": 156,
+        "wires": [
+            [
+                "ee18c177.bc25f"
+            ]
+        ]
+    },
+    {
+        "id": "ee18c177.bc25f",
+        "type": "ui_button",
+        "z": "1720a731.3f61a9",
+        "name": "",
+        "group": "b5b508b0.2a7358",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Send",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "niklas",
+        "payloadType": "global",
+        "topic": "mytopic",
+        "x": 383,
+        "y": 156,
+        "wires": [
+            [
+                "bbd6350c.e04068",
+                "2807dfcf.bc006"
+            ]
+        ]
+    },
+    {
+        "id": "2537fef.e9dc302",
+        "type": "ui_text_input",
+        "z": "1720a731.3f61a9",
+        "name": "",
+        "label": "Tweet:",
+        "group": "b5b508b0.2a7358",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "text",
+        "delay": "100",
+        "topic": "",
+        "x": 95,
+        "y": 155,
+        "wires": [
+            [
+                "12ec5502.e127bb"
+            ]
+        ]
+    },
+    {
+        "id": "6c13a236.d6954c",
+        "type": "twitter in",
+        "z": "23a35187.98affe",
+        "twitter": "",
+        "tags": "أمريكا",
+        "user": "false",
+        "name": "",
+        "topic": "tweets",
+        "inputs": 0,
+        "x": 99,
+        "y": 138,
+        "wires": [
+            [
+                "dbf5f6d0.5870d8"
+            ]
+        ]
+    },
+    {
+        "id": "dbf5f6d0.5870d8",
+        "type": "watson-translator",
+        "z": "23a35187.98affe",
+        "name": "",
+        "action": "translate",
+        "basemodel": "es-en",
+        "domain": "conversational",
+        "srclang": "ar",
+        "destlang": "en",
+        "password": "",
+        "custom": "",
+        "domainhidden": "conversational",
+        "srclanghidden": "ar",
+        "destlanghidden": "en",
+        "basemodelhidden": "",
+        "customhidden": "",
+        "filetype": "forcedglossary",
+        "trainid": "",
+        "lgparams2": true,
+        "ldparamshidden2": "true",
+        "default-endpoint": true,
+        "service-endpoint": "https://gateway.watsonplatform.net/language-translator/api",
+        "x": 303,
+        "y": 138,
+        "wires": [
+            [
+                "8412766b.0bec88"
+            ]
+        ]
+    },
+    {
+        "id": "8412766b.0bec88",
+        "type": "debug",
+        "z": "23a35187.98affe",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 523,
+        "y": 137,
+        "wires": []
+    },
+    {
+        "id": "a6e68d67.1bc2b",
+        "type": "inject",
+        "z": "23a35187.98affe",
+        "name": "",
+        "topic": "",
+        "payload": "I'm really really sad",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 166,
+        "y": 293,
+        "wires": [
+            [
+                "5470cae4.b7ac84"
+            ]
+        ]
+    },
+    {
+        "id": "5470cae4.b7ac84",
+        "type": "watson-tone-analyzer-v3",
+        "z": "23a35187.98affe",
+        "name": "",
+        "tones": "all",
+        "sentences": "true",
+        "contentType": "false",
+        "tone-method": "generalTone",
+        "default-endpoint": true,
+        "service-endpoint": "https://gateway.watsonplatform.net/tone-analyzer/api",
+        "x": 412,
+        "y": 293,
+        "wires": [
+            [
+                "9fff0a7b.5825f8"
+            ]
+        ]
+    },
+    {
+        "id": "9fff0a7b.5825f8",
+        "type": "debug",
+        "z": "23a35187.98affe",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "response",
+        "x": 653,
+        "y": 293,
+        "wires": []
+    },
+    {
+        "id": "a5737c13.73c27",
+        "type": "inject",
+        "z": "23a35187.98affe",
+        "name": "",
+        "topic": "",
+        "payload": "Hallo Welt",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 135,
+        "y": 437,
+        "wires": [
+            [
+                "8b9c8d66.d2155"
+            ]
+        ]
+    },
+    {
+        "id": "c6b26ca9.498af",
+        "type": "ui_audio",
+        "z": "23a35187.98affe",
+        "name": "",
+        "group": "a863e2a7.9533a",
+        "voice": "0",
+        "always": true,
+        "x": 559,
+        "y": 439,
+        "wires": []
+    },
+    {
+        "id": "8b9c8d66.d2155",
+        "type": "watson-text-to-speech",
+        "z": "23a35187.98affe",
+        "name": "",
+        "lang": "en-US",
+        "langhidden": "en-US",
+        "langcustom": "NoCustomisationSetting",
+        "langcustomhidden": "",
+        "voice": "en-US_LisaVoice",
+        "voicehidden": "en-US_LisaVoice",
+        "format": "audio/wav",
+        "password": "",
+        "payload-response": true,
+        "default-endpoint": true,
+        "service-endpoint": "https://stream.watsonplatform.net/text-to-speech/api",
+        "x": 350,
+        "y": 438,
+        "wires": [
+            [
+                "c6b26ca9.498af"
+            ]
+        ]
+    },
+    {
+        "id": "1d143450.c2950c",
+        "type": "watson-conversation-v1",
+        "z": "23a35187.98affe",
+        "name": "",
+        "workspaceid": "",
+        "multiuser": false,
+        "context": true,
+        "default-endpoint": true,
+        "service-endpoint": "https://gateway.watsonplatform.net/conversation/api",
+        "x": 384,
+        "y": 625,
+        "wires": [
+            [
+                "2513ced8.8ef212"
+            ]
+        ]
+    },
+    {
+        "id": "94e3fe96.383c2",
+        "type": "inject",
+        "z": "23a35187.98affe",
+        "name": "",
+        "topic": "",
+        "payload": "turn on the lights",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 155,
+        "y": 625,
+        "wires": [
+            [
+                "1d143450.c2950c"
+            ]
+        ]
+    },
+    {
+        "id": "2513ced8.8ef212",
+        "type": "debug",
+        "z": "23a35187.98affe",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "payload.output.text[0]",
+        "x": 645,
+        "y": 624,
+        "wires": []
+    },
+    {
+        "id": "a8796565.d393f8",
+        "type": "ibmiot out",
+        "z": "6b587497.bde64c",
+        "authentication": "boundService",
+        "apiKey": "",
+        "outputType": "evt",
+        "deviceId": "MyDevice",
+        "deviceType": "MyDeviceType",
+        "eventCommandType": "update",
+        "format": "json",
+        "data": "temp:10",
+        "qos": "",
+        "name": "Send to IBM IoT Platform",
+        "service": "registered",
+        "x": 637,
+        "y": 143,
+        "wires": []
+    },
+    {
+        "id": "27527e0a.3b7fe2",
+        "type": "inject",
+        "z": "6b587497.bde64c",
+        "name": "Send Data",
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 167,
+        "y": 143,
+        "wires": [
+            [
+                "fca6163.f92d0e8"
+            ]
+        ]
+    },
+    {
+        "id": "fca6163.f92d0e8",
+        "type": "function",
+        "z": "6b587497.bde64c",
+        "name": "Device payload",
+        "func": "// Thermostat's location:\nvar longitude1 = -98.49;\nvar latitude1 = 29.42;\n\n// Array of pseudo random temperatures\nvar temp1 = [15,17,18.5,20,21.5,23,24,22.2,19,18];\n\n// Array of pseudo random relative humidities\nvar humidity1 = [50,55,61,68,65,60,53,49,45,47];\n\n// Counter to select from array.\nvar counter1 = context.get('counter1')||0;\ncounter1 = counter1+1;\nif(counter1 > 9) counter1 = 0;\ncontext.set('counter1',counter1);\n\n// Create MQTT message in JSON\nmsg = {\n  payload: JSON.stringify(\n    {\n      d:{\n        \"temp\" : temp1[counter1],\n        \"humidity\" : humidity1[counter1],\n        \"location\" :\n        {\n          \"longitude\" : longitude1,\n          \"latitude\" : latitude1\n        },\n      }\n    }\n  )\n};\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 387,
+        "y": 143,
+        "wires": [
+            [
+                "a8796565.d393f8",
+                "9bab3710.438dc8"
+            ]
+        ]
+    },
+    {
+        "id": "5e7d4266.96cd2c",
+        "type": "comment",
+        "z": "6b587497.bde64c",
+        "name": "Device Simulator",
+        "info": "Sends simulated device sensor data to IBM Watson IoT Plaform.\n\nCan be configured to send on click or on an automatic interval.\n\n\n#Prerequisite\nOutput node device type and device ID need to match a device that it registered in a running IBM Watson IoT Platform service.\n\n# Watson IoT Platform docs\n[Connecting devices](https://www.bluemix.net/docs/services/IoT/iotplatform_task.html)",
+        "x": 167,
+        "y": 63,
+        "wires": []
+    },
+    {
+        "id": "64b0e3f0.021d0c",
+        "type": "comment",
+        "z": "6b587497.bde64c",
+        "name": "Click to send data",
+        "info": "To automatically send data:\n1. Change *Repeat* to interval.\n2. Click Deploy button.\n",
+        "x": 177,
+        "y": 183,
+        "wires": []
+    },
+    {
+        "id": "ccfea965.5dc348",
+        "type": "ibmiot in",
+        "z": "6b587497.bde64c",
+        "authentication": "boundService",
+        "apiKey": "",
+        "inputType": "evt",
+        "deviceId": "",
+        "applicationId": "",
+        "deviceType": "+",
+        "eventType": "+",
+        "commandType": "",
+        "format": "json",
+        "name": "IBM IoT App In",
+        "service": "registered",
+        "allDevices": false,
+        "allApplications": false,
+        "allDeviceTypes": true,
+        "allEvents": true,
+        "allCommands": false,
+        "allFormats": false,
+        "x": 159,
+        "y": 409,
+        "wires": [
+            [
+                "9462cc2e.549ad"
+            ]
+        ]
+    },
+    {
+        "id": "9462cc2e.549ad",
+        "type": "function",
+        "z": "6b587497.bde64c",
+        "name": "temp",
+        "func": "return {payload:msg.payload.d.temp};",
+        "outputs": 1,
+        "x": 349,
+        "y": 409,
+        "wires": [
+            [
+                "93c584ae.1e55e8"
+            ]
+        ]
+    },
+    {
+        "id": "93c584ae.1e55e8",
+        "type": "switch",
+        "z": "6b587497.bde64c",
+        "name": "temp thresh",
+        "property": "payload",
+        "rules": [
+            {
+                "t": "lte",
+                "v": 40,
+                "v2": null
+            },
+            {
+                "t": "gt",
+                "v": 40,
+                "v2": null
+            }
+        ],
+        "checkall": "true",
+        "outputs": 2,
+        "x": 509,
+        "y": 409,
+        "wires": [
+            [
+                "182dc448.fdbb0c"
+            ],
+            [
+                "1230e541.05dbbb"
+            ]
+        ]
+    },
+    {
+        "id": "9fd1fb4b.3475e8",
+        "type": "debug",
+        "z": "6b587497.bde64c",
+        "name": "cpu status",
+        "active": true,
+        "complete": "false",
+        "x": 849,
+        "y": 409,
+        "wires": []
+    },
+    {
+        "id": "182dc448.fdbb0c",
+        "type": "template",
+        "z": "6b587497.bde64c",
+        "name": "safe",
+        "template": "Temperature ({{payload}}) within safe limits",
+        "x": 669,
+        "y": 389,
+        "wires": [
+            [
+                "9fd1fb4b.3475e8"
+            ]
+        ]
+    },
+    {
+        "id": "1230e541.05dbbb",
+        "type": "template",
+        "z": "6b587497.bde64c",
+        "name": "danger",
+        "template": "Temperature ({{payload}}) critical",
+        "x": 679,
+        "y": 429,
+        "wires": [
+            [
+                "9fd1fb4b.3475e8"
+            ]
+        ]
+    },
+    {
+        "id": "d27e7ab6.163268",
+        "type": "comment",
+        "z": "6b587497.bde64c",
+        "name": "Temperature Monitor",
+        "info": "",
+        "x": 169,
+        "y": 309,
+        "wires": []
+    },
+    {
+        "id": "af73f3dc.c19b",
+        "type": "comment",
+        "z": "6b587497.bde64c",
+        "name": "Configure source",
+        "info": "",
+        "x": 159,
+        "y": 369,
+        "wires": []
+    },
+    {
+        "id": "4cdead97.ff2c14",
+        "type": "ibmiot in",
+        "z": "547f57e1.e0b3f8",
+        "authentication": "quickstart",
+        "apiKey": "",
+        "inputType": "evt",
+        "deviceId": "",
+        "applicationId": "",
+        "deviceType": "+",
+        "eventType": "+",
+        "commandType": "",
+        "format": "json",
+        "name": "IBM IoT App In",
+        "service": "quickstart",
+        "allDevices": false,
+        "allApplications": false,
+        "allDeviceTypes": true,
+        "allEvents": true,
+        "allCommands": false,
+        "allFormats": false,
+        "x": 126,
+        "y": 221,
+        "wires": [
+            [
+                "75759a95.d4f7b4",
+                "1b2bd46b.dc0a1c",
+                "fcdd5ae4.bdbb58",
+                "50bc9327.d2836c",
+                "4fbabe34.7f726"
+            ]
+        ]
+    },
+    {
+        "id": "75759a95.d4f7b4",
+        "type": "debug",
+        "z": "547f57e1.e0b3f8",
+        "name": "name",
+        "active": true,
+        "complete": "payload.d.name",
+        "x": 640.5,
+        "y": 391,
+        "wires": []
+    },
+    {
+        "id": "1b2bd46b.dc0a1c",
+        "type": "debug",
+        "z": "547f57e1.e0b3f8",
+        "name": "Temperature",
+        "active": true,
+        "complete": "payload.d.temp",
+        "x": 657.5,
+        "y": 270,
+        "wires": []
+    },
+    {
+        "id": "fcdd5ae4.bdbb58",
+        "type": "debug",
+        "z": "547f57e1.e0b3f8",
+        "name": "Humidity",
+        "active": true,
+        "complete": "payload.d.humidity",
+        "x": 653.5,
+        "y": 464,
+        "wires": []
+    },
+    {
+        "id": "50bc9327.d2836c",
+        "type": "debug",
+        "z": "547f57e1.e0b3f8",
+        "name": "Object Temperature",
+        "active": true,
+        "complete": "payload.d.objectTemp",
+        "x": 687.5,
+        "y": 533,
+        "wires": []
+    },
+    {
+        "id": "e4fbf262.adbce",
+        "type": "ui_gauge",
+        "z": "547f57e1.e0b3f8",
+        "name": "",
+        "group": "a863e2a7.9533a",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Gauge",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "40",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "20",
+        "seg2": "30",
+        "x": 634,
+        "y": 213,
+        "wires": []
+    },
+    {
+        "id": "4fbabe34.7f726",
+        "type": "change",
+        "z": "547f57e1.e0b3f8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.d.temp",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 460,
+        "y": 193,
+        "wires": [
+            [
+                "e4fbf262.adbce",
+                "c77d55be.c11128"
+            ]
+        ]
+    },
+    {
+        "id": "9f32d02b.09148",
+        "type": "comment",
+        "z": "547f57e1.e0b3f8",
+        "name": "TODO: Get ID from https://quickstart.internetofthings.ibmcloud.com/iotsensor/",
+        "info": "https://quickstart.internetofthings.ibmcloud.com/iotsensor/",
+        "x": 328,
+        "y": 95,
+        "wires": []
+    },
+    {
+        "id": "9bab3710.438dc8",
+        "type": "debug",
+        "z": "6b587497.bde64c",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 597,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "c77d55be.c11128",
+        "type": "ui_chart",
+        "z": "547f57e1.e0b3f8",
+        "name": "",
+        "group": "8af34626.4002f8",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "x": 635,
+        "y": 156,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "e7b0b01f.5e883",
+        "type": "comment",
+        "z": "98f15973.119b98",
+        "name": "Implement REST API",
+        "info": "",
+        "x": 130,
+        "y": 69,
+        "wires": []
+    },
+    {
+        "id": "8d19fed.7548c",
+        "type": "comment",
+        "z": "98f15973.119b98",
+        "name": "Invoke REST API",
+        "info": "",
+        "x": 110,
+        "y": 239,
+        "wires": []
+    },
+    {
+        "id": "3ec6af6.e4b585",
+        "type": "comment",
+        "z": "23a35187.98affe",
+        "name": "Translate",
+        "info": "",
+        "x": 110,
+        "y": 31,
+        "wires": []
+    },
+    {
+        "id": "df4175.58647e88",
+        "type": "comment",
+        "z": "23a35187.98affe",
+        "name": "TODO: Configure Twitter",
+        "info": "",
+        "x": 157,
+        "y": 86,
+        "wires": []
+    },
+    {
+        "id": "14d76bfc.192e94",
+        "type": "comment",
+        "z": "1720a731.3f61a9",
+        "name": "TODO: Configure Twitter",
+        "info": "",
+        "x": 664,
+        "y": 52,
+        "wires": []
+    },
+    {
+        "id": "b06c5744.d06f98",
+        "type": "comment",
+        "z": "23a35187.98affe",
+        "name": "Tone Analyzer",
+        "info": "",
+        "x": 121,
+        "y": 247,
+        "wires": []
+    },
+    {
+        "id": "db7e954b.f95a48",
+        "type": "comment",
+        "z": "23a35187.98affe",
+        "name": "Text to Speech",
+        "info": "",
+        "x": 129,
+        "y": 387,
+        "wires": []
+    },
+    {
+        "id": "e65fd38f.eded5",
+        "type": "comment",
+        "z": "23a35187.98affe",
+        "name": "Conversation",
+        "info": "",
+        "x": 122,
+        "y": 536,
+        "wires": []
+    },
+    {
+        "id": "1b62dd48.b217a3",
+        "type": "comment",
+        "z": "23a35187.98affe",
+        "name": "TODO: Configure Workspace ID",
+        "info": "",
+        "x": 444,
+        "y": 574,
+        "wires": []
+    }
+]
